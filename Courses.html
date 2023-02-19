@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Courses</title>
+</head>
+	
+	<style>
+		* {
+    box-sizing: border-box;
+     margin: 0;
+    padding: 0;
+}
+/*Adds a black background shadow to the image background*/
+body{
+	background: url('Brock.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+
+}
+/*Creates the navgation bar on the top*/
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+/*Sets the title of the Page on the far left*/
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+/*Covers the hyperlinks to the page*/
+.navbar-links {
+    height: 100%;
+}
+/*Styles the navbar links*/
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+/*Gets rid of decoration on the list */
+.navbar-links li {
+    list-style: none;
+}
+
+/*Gets rid of decoration on the hyperlinks*/
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+/*Background changes when hovered*/
+.navbar-links li:hover {
+    background-color: #555;
+}
+/*Styles the the burger button*/
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+/*Styles each bar of the button*/
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+/*Creates the blue box that contains the picture and acdemic interest*/
+  .container{
+		border-radius: 8px;
+        padding: 5px;
+		position: fixed;
+		width: 450px;
+		height: 300px;
+		margin: 240px auto;
+		background: #D4D4D4;
+		left: 490px;
+		top: 170px;
+		background: rgba(83, 175, 242, .6);
+		box-shadow: 0 15px 20px rgba(0,0,0, .2);
+
+
+	}
+	/*Designs the the login/sign-up button*/
+	.designBtn{
+		background-color: #00CDFE;
+		border: none;
+		color: white;
+		padding: 15px 10px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	/* Puts Slef portrait in a circular shape*/
+	.slefPortrait{
+		position: relative;
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+  		
+	}
+	/*Creates a container where the courses are listed*/
+	.containerTwo{
+		border: 5px solid red;
+		border-radius: 8px;
+        padding: 5px;
+		position: relative;
+		width: 800px;
+		height: 700px;
+		margin: 240px auto;
+		background: #D4D4D4;
+		top: -300px;
+	}
+	/*Styles the list*/
+	.listStyle{
+		padding-top: 50px;
+		font-family: cursive;
+		font-size: 25px;
+	}
+	/* Creates a footer of the page*/
+	.footer {
+  	position: fixed;
+ 	left: 0;
+  	bottom: 0px;
+  	width: 100%;
+  	height: 50px;
+  	background-color: #333;
+  	color: white;
+  	text-align: center;
+    }
+   	 .login{
+   	  visibility: visible;
+   }
+   .NotLogged{
+  	visibility: visible;
+  	color: red;
+
+  }
+
+ 
+
+	
+	
+/*Adjuusts Page to be tailored to a phone or tablet*/
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+    .containerTwo{
+    	height: 500px;
+    	width: 500px;
+    }
+    .listStyle{
+    	font-size: 15px;
+    }
+    .NotLogged{
+  	visibility: visible;
+  	color: red;
+
+  }
+
+  
+}
+
+	</style>
+<body>
+
+	<nav class="navbar">
+			<div class="brand-title">Atharv Adhyapak</div> <!-- Adds brand name on navigation bar-->
+			<a href="#" class="toggle-button">
+          	<span class="bar"></span> <!-- Adds bar for hamburger menu-->
+          	<span class="bar"></span> <!-- Adds bar for hamburger menu-->
+          	<span class="bar"></span> <!-- Adds bar for hamburger menu-->
+        </a>
+        <div class="navbar-links">
+        	<ul>
+        		<li> <a href=./index.html> Home</a> </li><!-- Hyperlink to homepage  -->
+				<li> <a href=./Courses.html> Courses </a> </li><!-- Hyperlink to course page -->
+				<li> <a href=./AboutMe.html> About Me </a> </li><!-- Hyperlink to About me page -->
+				<li> <a href=./CV_Page.html> Curriculum Vitae </a></li><!-- Hyperlink to CV page-->
+				<li> <a href=./PastProjects.html> Past Projects </a> </li><!-- Hyperlink to past projects page only when user is logged in-->
+        	</ul>
+        	
+        </div>
+
+        <!--Displays Login/Sign up button, and once clicked takes user to login page  -->
+        <input type="button" value="Login/Sign-Up" onclick=location.href="Login.html" class="designBtn login" id="login">
+        <!-- Displays Logout button once user is logged in -->
+        <button class="designBtn" id="logOut"  onclick="LogOut()" style="visibility: hidden;">Log Out</button>
+			
+		</nav>
+
+		<center>
+		<img src="brock_copy.png" alt="Brock">
+		</center>
+
+		<div class="containerTwo">
+			<header style="background-color: #AAAAAA;"> <!--Styles the header of the container-->
+			<h1 style="color: #B7121F; text-align: center;">Courses</h1> <!--Styles the title-->
+			</header>
+
+			<!--Displays the list of courses -->
+			<ol style="padding-left: 40px;">
+		 	<li class="listStyle">COSC 2P03 - Advanced Data Strutures</li>
+		 	<li class="listStyle">COSC 2P12 - Introduction to Computer Architecture</li>
+		 	<li class="listStyle">COSC 2P89 - Internet Technologies</li>
+		 	<li class="listStyle">MATH 1P12 - Applied Linear Algebra</li>
+		 	<li class="listStyle">DART 1P91 - Introduction to Theatre and Performance</li>
+		 </ol>
+
+		 
+			
+		</div>
+		<!-- Adds the footer bar below-->
+		<div class="footer">
+		<a href=./Delete.html style="color: orange;">Delete Account</a><!-- Displays hyperlink to delete page -->
+		<h3 class="NotLogged" id="wrong">You're Not Logged In</h3><!-- Tells the user there not logged in-->
+		<!--Tells the user there logged in  and hides the previous message-->
+		<h3 id="right" style="visibility: hidden; color: green; position: absolute; top: 20px; left: 640px;">You're Logged In</h3><
+	   </div>
+
+
+		<script>
+		const toggleButton = document.getElementsByClassName('toggle-button')[0]
+		const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+		toggleButton.addEventListener('click', () => {
+  		navbarLinks.classList.toggle('active')
+		})
+
+		const Login = localStorage.getItem("IsLoggedIn");
+
+		if(Login){
+			document.getElementById("login").style.visibility="hidden"//Hides login/sign-up button
+			document.getElementById("logOut").style.visibility="visible";// displays logout  button
+			document.getElementById("wrong").style.visibility="hidden"// hides "your not logged in message"
+			document.getElementById("right").style.visibility="visible"// displays you are logged in message
+		}
+				//redirects user to login page when logged out
+		function LogOut(){
+			localStorage.removeItem("IsLoggedIn")
+			location.replace("https://www.cosc.brocku.ca/~aa20bw/A5/srk57/Login.html")
+		}
+
+	</script>
+
+</body>
+</html>

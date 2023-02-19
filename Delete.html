@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+</head>
+
+<style>
+	* {
+    box-sizing: border-box;
+     margin: 0;
+    padding: 0;
+}
+body{
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('imageTwo.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+
+}
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+  .container{
+		border-radius: 8px;
+        padding: 5px;
+		position: fixed;
+		width: 615px;
+		height: 500px;
+		margin: 240px auto;
+		background: #D4D4D4;
+		left: 5px;
+		top: -50px;
+		background: rgba(255, 255, 255, .4);
+		box-shadow: 0 15px 20px rgba(0,0,0, .2);
+
+	}
+	.designBtn{
+		background-color: #00CDFE;
+		border: none;
+		color: white;
+		padding: 15px 10px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	.login-box{
+		width: 360px;
+		height: 320px;
+		margin: auto;
+		border-radius: 3px;
+		background-color: white;
+
+	}
+
+
+	 label{
+    	display: flex;
+    	margin-top: 20px;
+    	font-size: 18px;
+    }
+    input{
+    	width: 100%;
+    	padding:  7px;
+    	border: none;
+    	border: 1px solid grey;
+    	border-radius: 6px;
+    	outline: none;
+    }
+    p{
+    	text-align: center;
+    	color: white;
+    }
+     input[type="button"]{
+    	width: 320px;
+    	height: 35px;
+    	margin-top: 30px;
+    	border: none;
+    	background-color: #00CDFE;
+    	color: white;
+    	font-size: 18px;
+    	align-items: center;
+    }
+    .footer {
+  	position: fixed;
+ 	 left: 0;
+  	bottom: 0px;
+  	width: 100%;
+  	height: 50px;
+  	background-color: #333;
+  	color: white;
+  	text-align: center;
+	}
+	.NotLogged{
+  	color: red;
+
+  }
+
+
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+  
+}
+
+</style>
+<body>
+	<nav class="navbar">
+			<div class="brand-title">Atharv Adhyapak</div>
+			<a href="#" class="toggle-button">
+          	<span class="bar"></span>
+          	<span class="bar"></span>
+          	<span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+        	<ul>
+        		<li> <a href=./index.html> Home</a> </li>
+				<li> <a href=./Courses.html> Courses </a> </li>
+				<li> <a href=./AboutMe.html> About Me </a> </li>
+				<li> <a href=./CV_Page.html> Curriculum Vitae </a></li>
+				<li> <a href=./PastProjects.html> Past Projects </a> </li>
+        	</ul>
+        	
+        </div>
+
+        <button class="designBtn" id="login" onclick=location.href="Login.html">Login/Sign-Up</button>
+			
+		</nav>
+
+		<div class="login-box">
+			<div id="one" style="visibility: hidden;">
+				<h1>ONE</h1>
+			</div>
+
+			<div id="two" style="visibility:show;">
+				<h2 style="text-align: center;">Delete</h2>
+					<label>Username</label>
+					<input id="user" type="text"><br>
+					<label>Password</label>
+					<input id="pass" type="password">
+					<input type="button" value="Delete" onclick="showit()">
+			</div>
+		
+		</div>
+			<p>Don't have an account? <a href="./Sign_Up.html" style="color: orange;">Sign-Up here</a></p>
+
+		<div class="footer">
+		<h3 class="NotLogged" id="wrong">You're Not Logged In</h3>
+	   </div>
+
+		<script>
+		const toggleButton = document.getElementsByClassName('toggle-button')[0]
+		const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+		toggleButton.addEventListener('click', () => {
+  		navbarLinks.classList.toggle('active')
+		})
+
+
+		function showit(){
+			var username = document.querySelector("#user").value;  
+        	var password = document.querySelector("#pass").value;
+
+        	var req = new XMLHttpRequest();
+        	req.addEventListener("readystatechange", eve => {
+          		if (req.readyState == 4) {
+          		   alert(req.responseText.trim())
+          		   if(req.responseText.trim()=="User Deletion Successful"){
+          		   		location.replace('https://www.cosc.brocku.ca/~aa20bw/A5/srk57/index.html');
+    				document.getElementById('one').style.visibility='show';
+					document.getElementById('two').style.visibility='hidden';
+			}	
+          }
+        });
+
+        req.open("POST", "../../cgi-bin/sqlDelete.cgi");
+
+        // need to specify the post format when doing ajax
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+        // encodeURIComponent will perform percent encoding on the parameter
+        req.send("user=" + username + "&" + "pass=" + password)
+
+
+
+		}
+	</script>
+
+</body>
+</html>

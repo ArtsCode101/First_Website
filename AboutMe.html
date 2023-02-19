@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AboutMe</title>
+</head>
+	<style>
+		* {
+    box-sizing: border-box;
+     margin: 0;
+    padding: 0;
+}
+/*Adds a black background shadow to the image background*/
+body{
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('darkTwo.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+
+}
+/*Creates the navgation bar on the top*/
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+/*Sets the title of the Page on the far left*/
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+/*Covers the hyperlinks to the page*/
+.navbar-links {
+    height: 100%;
+}
+/*Styles the navbar links*/
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+/*Gets rid of decoration on the list */
+.navbar-links li {
+    list-style: none;
+}
+/*Gets rid of decoration on the hyperlinks*/
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+/*Background changes when hovered*/
+.navbar-links li:hover {
+    background-color: #555;
+}
+/*Styles the the burger button*/
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+/*Styles each bar of the button*/
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+/*Creates the blue box that contains the picture and acdemic interest*/
+  .container{
+		border-radius: 8px;
+        padding: 5px;
+		position: fixed;
+		width: 615px;
+		height: 500px;
+		margin: 240px auto;
+		background: #D4D4D4;
+		left: 5px;
+		top: -50px;
+		background: rgba(255, 255, 255, .4);
+		box-shadow: 0 15px 20px rgba(0,0,0, .2);
+
+	}
+	/*Designs the the login/sign-up button*/
+	.designBtn{
+		background-color: #00CDFE;
+		border: none;
+		color: white;
+		padding: 15px 10px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	p{
+		color: white;
+	}
+	/*Styles canadian tire image*/
+	.img_CT{
+		float: left;
+		width: 450px;
+		height: 230px;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
+	.text{
+		text-align: justify;
+	}
+	/*Styles image */
+	.img_SSC{
+		float: right;
+		width: 450px;
+		height: 230px;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
+	/* Creates a footer of the page*/
+	.footer {
+  	position: fixed;
+ 	 left: 0;
+  	bottom: 0px;
+  	width: 100%;
+  	height: 50px;
+  	background-color: #333;
+  	color: white;
+  	text-align: center;
+	}
+	.login{
+		visibility: visible;
+	}
+	.NotLogged{
+  	visibility: visible;
+  	color: red;
+
+  }
+	
+
+
+
+
+
+/*Adjuusts Page to be tailored to a phone or tablet*/
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+  
+}
+	</style>
+
+<body>
+
+	<nav class="navbar">
+			<div class="brand-title">Atharv Adhyapak</div><!-- Adds brand name on navigation bar-->
+			<a href="#" class="toggle-button">
+          	<span class="bar"></span><!-- Adds bar for hamburger menu-->
+          	<span class="bar"></span><!-- Adds bar for hamburger menu-->
+          	<span class="bar"></span><!-- Adds bar for hamburger menu-->
+        </a>
+        <div class="navbar-links">
+        	<ul>
+        		<li> <a href=./index.html> Home</a> </li><!-- Hyperlink to homepage  -->
+				<li> <a href=./Courses.html> Courses </a> </li><!-- Hyperlink to course page -->
+				<li> <a href=./AboutMe.html> About Me </a> </li><!-- Hyperlink to About me page -->
+				<li> <a href=./CV_Page.html> Curriculum Vitae </a></li><!-- Hyperlink to CV page-->
+				<li> <a href=./PastProjects.html> Past Projects </a> </li><!-- Hyperlink to past projects page only when user is logged in-->
+        	</ul>
+        	
+        </div>
+        <!--Displays Login/Sign up button, and once clicked takes user to login page  -->
+        <input type="button" value="Login/Sign-Up" onclick=location.href="Login.html" class="designBtn login" id="login">
+        <!-- Displays Logout button once user is logged in -->
+        <button class="designBtn" id="logOut" style="visibility: hidden;" onclick="LogOut()">Log Out</button>
+        
+			
+		</nav>
+		<!--First section of about-->
+		<h2 style="color: #d22d30;">Who am I?</h2>
+		<p style="line-height: 1.75;"> <b>My name is Atharv Adhyapak or I also go by Art for people who have difculty proncing my first name. I'm a student at Brock Unversity, majoring in the Computer Sceince Program with a bachelor of sceince degree. I've always found computers to be facinating, not only for entertainment purposes but for educational stand point as well. Seventh grade, is when the curiousity really sparked in me, mostly becuase it was the time I realized that alot of the people I know in my Life are in the computer field so with so much of an influential aspect around me I was able to look at computers more than just a mouse, keyboard, and a screen, the machinery has been around mankind for decades evolving and making life more easier for people all over the world. So the curiousty began of looking into how it worked and knowing what was going on behind the scenes of the system. Thus, I entered the Computer Science field </b></p>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<!--Second section of about me-->
+		<h2 style="color: #d22d30;">Job Experiance</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<h3 style="color: #9e7c61; padding-left: 40px;">M.P Campaign</h3>
+		<p style="padding-left: 40px; line-height: 1.75;">&nbsp;&nbsp;&nbsp;&nbsp; <b>This first experiance wasn't really a job, but a mandetory 40 hour volounteer work for high school. However there was still labour involved which slightly counts as work experiance just without pay. Now, I was volunteering for a candidate who was a runner up for one of the seats for the House of Commons. I managed two events, one outdoor and the second indoor. In these events the main volunteer work was to decorate the enviorment to make it look presentable and assist the guest if they need andything</b></p>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<h3 style="color: #9e7c61; padding-left: 40px;">Canadian Tire</h3>
+
+		<div>
+			<img src="CT.jpeg" alt="" class="img_CT">
+			<div>
+		<p style="padding-left: 40px; line-height: 1.75;" class="text">&nbsp;&nbsp;&nbsp;&nbsp;<b>The summer of 2022 from May-Agust I worked at Canadian Tire, which was my first oppurtunity I got to enter the workforce and it was one of the most best and fun experiance I've had in my entire life, and you'll soon see why. When I first got hired, it was as Garden Center Associate which invloved helping customers put soil packets in there cars, watering the planets, and cleaning the area. But after a month I relaized I wasn't gaining the most experiance working outside as the most interaction with the customers and other employees happen inside the store. I requested to switch my position working in the store so that I can expand my knowledge and continue working with a strong team of people. And by the next week was given the title of a Filling Associate. Being apart of the filling team required us to work in all departments, learning about all products and collaborating with colleagues to combine opinions. The three months working inside the store was truly an amazing experiance as I got to work with and communicate with such kind people which made the experiance better</b></p>
+			</div>
+
+		</div>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<div>
+			<img src="SSC.jpeg" alt="Co-op" class="img_SSC">
+			<div>
+
+		<h3 style="color: #9e7c61; padding-left: 40px; padding-top: 40px;">S.A.C.M</h3>
+		<p style="padding-left: 40px; line-height: 1.75;" class="text">&nbsp;&nbsp;&nbsp;&nbsp;<b>As I'm in my second year of university, I'm required to have a work term otherwise known as Co-op. After over a month of applying to a total of 17 jobs I have secured a position in the SACM department for the Government of Canada. The acrynom stands for Service Asset Configuration Managment. Altough I haven't had any experiance yet in this position as my work term starts on January 2nd, 2023, however I can outline a breif description of what I'll be doing. In this role I’ll be part of a team that sets up and test automation focused on hardware devices and virtual servers not only that but The department also hase an auto ticketing system that gives out reports and status of devices and if there an issues we would have to fix them.</b></p>
+			</div>
+		</div>
+
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<!--Second section of about me-->
+		<h2 style="color: #d22d30;;">Hobbies</h2>
+
+		<div>
+			<img src="hobby.jpg" alt="hobby" class="img_CT">
+			<div>
+		<p style="line-height: 1.75;">&nbsp;&nbsp;&nbsp;&nbsp;<b>My hobbies mainly include playing sports, painting, and now days I'm slowly getting into reading. If I were to go more in depth about my favourite sport it would defintley be Basketball mainly becuase it was the first sport I was introduced to, watching videos and other people playing is what really sparked the interest although I enjoy all sports but basketball is on the top. Now, when it comes to painting and drawing it comes from my mom's side as my grandfather is a professional artist, and my mom also knows here way around with a pencil and paper, so me inherting this skill was kind of natural. I mostly draw stuff that I can see as my imagination hasn't reach that big of spectrum that I can makeup something on the spot. Moreover, when coming to the topic about books, Game of Thrones is what really got me intrested, the storyline, dialouges</b></p>
+		</div>
+			</div>
+
+
+		<div class="footer">
+		<a href=./Delete.html style="color: orange;">Delete Account</a>
+		<h3 class="NotLogged" id="wrong">You're Not Logged In</h3>
+		<h3 id="right" style="visibility: hidden; color: green; position: absolute; top: 20px; left: 640px;">You're Logged In</h3>
+	   </div>
+
+
+		<script>
+		const toggleButton = document.getElementsByClassName('toggle-button')[0]
+		const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+		toggleButton.addEventListener('click', () => { //displays dropdown menu 
+  		navbarLinks.classList.toggle('active')
+		})
+
+		const Login = localStorage.getItem("IsLoggedIn");
+
+		if(Login){
+			document.getElementById("login").style.visibility="hidden"//Hides login/sign-up button
+			document.getElementById("logOut").style.visibility="visible";// displays logout  button
+			document.getElementById("wrong").style.visibility="hidden"// hides "your not logged in message"
+			document.getElementById("right").style.visibility="visible"// displays you are logged in message 
+		}
+		//redirects user to login page when logged out 
+		function LogOut(){
+			localStorage.removeItem("IsLoggedIn")
+			location.replace("https://www.cosc.brocku.ca/~aa20bw/A5/srk57/Login.html")
+		}
+
+		
+	</script>
+
+
+
+
+</body>
+</html>
